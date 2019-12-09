@@ -90,8 +90,12 @@ function processLastItem(/* CODE HERE */stringList, callback) {
  * [2] Invoking `processSum` passing `[]` and `(num) => num + 1000`,
  * should return 1000.
 */
-function processSum(/* CODE HERE */) {
+function processSum(/* CODE HERE */numberList, callback) {
   /* CODE HERE */
+  var sum = numberList.reduce(function(sum, currentValue) {
+    return sum + currentValue;
+  }, 0);
+  return callback(sum);
 }
 
 /**
