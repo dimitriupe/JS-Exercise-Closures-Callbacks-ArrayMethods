@@ -143,8 +143,12 @@ function processProduct(/* CODE HERE */num1, num2, callback) {
  * "lady gaga" and `['foo', 'bar']` and `(bool) => bool ? 'nice!' : 'sad'`,
  * should return "sad".
 */
-function processContains(/* CODE HERE */) {
+function processContains(/* CODE HERE */item, list, callback) {
   /* CODE HERE */
+  if(list.includes(item)){
+    return callback(true);
+ }
+ return callback(false);
 }
 
 /**
@@ -188,9 +192,17 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
-function getFullNames(/* CODE HERE */) {
+function getFullNames(/* CODE HERE */runners) {
   /* CODE HERE */
+  let fullName = [];
+  runners.forEach(runners => {
+    fullName.push(`${runners.last_name}  ${runners.first_name}`);
+  });
+  return (fullName);
 }
+
+
+
 
 /**
  * ### Challenge `firstNamesAllCaps`
@@ -204,8 +216,14 @@ function getFullNames(/* CODE HERE */) {
  * @returns an array with all the runners' first names in ALL CAPS.
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
-function firstNamesAllCaps(/* CODE HERE */) {
+function firstNamesAllCaps(/* CODE HERE */runners) {
   /* CODE HERE */
+  let allCaps = [];
+
+  runners.map((runners, index) => {
+      allCaps[index] = runners.first_name.toUpperCase();
+  })
+  return allCaps;
 }
 
 /**
