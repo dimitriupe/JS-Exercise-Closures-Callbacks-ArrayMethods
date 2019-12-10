@@ -196,13 +196,10 @@ function getFullNames(/* CODE HERE */runners) {
   /* CODE HERE */
   let fullName = [];
   runners.forEach(runners => {
-    fullName.push(`${runners.last_name}  ${runners.first_name}`);
+    fullName.push(`${runners.last_name + ','} ${runners.first_name}`);
   });
   return (fullName);
 }
-
-
-
 
 /**
  * ### Challenge `firstNamesAllCaps`
