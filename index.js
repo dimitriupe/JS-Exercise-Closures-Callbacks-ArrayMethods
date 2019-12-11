@@ -278,19 +278,16 @@ function tallyUpDonations(/* CODE HERE */runners) {
 */
 function counterMaker() {
 // BROKEN CODE STARTS
-  let counter = () => {
     let count = 0;
-    return () => {
-      count ++;
-      return count;
-    };
-  };
-  let myCounter = counter();
-  myCounter();
-  myCounter();
-  myCounter();
-  // BROKEN CODE ENDS
+    return function() {return ++count;};
 }
+ 
+let counter = counterMaker();
+
+counter();
+counter();
+counter();
+  // BROKEN CODE ENDS
 
 /**
  * ### Challenge `counterMakerWithLimit`
